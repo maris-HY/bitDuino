@@ -1,0 +1,21 @@
+bitDuino13-9.name=bitDuino13 (internal 9.6 MHz clock)
+bitDuino13-9.bootloader.low_fuses=0x7a
+bitDuino13-9.bootloader.high_fuses=0xff
+bitDuino13-9.upload.maximum_size=1024
+bitDuino13-9.bootloader.path=dummy
+bitDuino13-9.bootloader.file=dummy.hex
+bitDuino13-9.build.mcu=attiny13
+bitDuino13-9.build.f_cpu=9600000L
+bitDuino13-9.build.core=arduino
+bitDuino13-9.build.variant=bitDuino13
+
+
+bitDuino10-8.name=bitDuino10 (internal 8 MHz clock)
+bitDuino10-8.bootloader.low_fuses=0xff
+bitDuino10-8.upload.maximum_size=1024
+bitDuino10-8.bootloader.path=dummy
+bitDuino10-8.bootloader.file=dummy.hex
+bitDuino10-8.build.mcu=attiny10
+bitDuino10-8.build.f_cpu=8000000L
+bitDuino10-8.build.core=arduino
+bitDuino10-8.build.variant=bitDuino10
