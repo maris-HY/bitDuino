@@ -60,7 +60,7 @@ int analogRead(uint8_t pin)
 
 	ADMUX = ((ADMUX & 0x40) | (pin & 0x03));
 #if defined(__AVR_ATtiny10__)
-	DIDR0 = (1 << pin);
+	DIDR0 |= (1 << pin);
 #endif
 	// without a delay, we seem to read from the wrong channel
 	// delay(1);

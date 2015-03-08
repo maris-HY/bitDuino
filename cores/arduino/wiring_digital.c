@@ -28,13 +28,40 @@
 #include "wiring_private.h"
 // #include "pins_arduino.h"
 
+#if defined(__AVR_ATtiny10__)
+void pinMode(uint8_t pin, uint8_t mode)
+{
+	if (pin > 3) return;
+
+	if (pin < 2) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
+
+	if (mode == INPUT) { 
+		uint8_t oldSREG = SREG;
+                cli();
+		DDRB &= ~(1<<pin);
+		PUEB &= ~(1<<pin);		// Pull-up Enable Control Register
+		SREG = oldSREG;
+	} else if (mode == INPUT_PULLUP) {
+		uint8_t oldSREG = SREG;
+                cli();
+		DDRB &= ~(1<<pin);
+		PUEB |= (1<<pin);		// Pull-up Enable Control Register
+		SREG = oldSREG;
+	} else {
+		uint8_t oldSREG = SREG;
+                cli();
+		PUEB &= ~(1<<pin);		// Pull-up Enable Control Register
+		DDRB |= (1<<pin);
+		SREG = oldSREG;
+	}
+}
+
+#else
+
 void pinMode(uint8_t pin, uint8_t mode)
 {
 	if (pin > 4) return;
 
-#if defined(__AVR_ATtiny10__)
-	if (pin < 2) DIDR0 &= ~(1 << pin);
-#endif
 	if (mode == INPUT) { 
 		uint8_t oldSREG = SREG;
                 cli();
@@ -54,6 +81,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 		SREG = oldSREG;
 	}
 }
+#endif
 
 
 void digitalWrite(uint8_t pin, uint8_t val)
