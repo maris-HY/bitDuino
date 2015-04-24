@@ -103,9 +103,13 @@ void digitalWrite(uint8_t pin, uint8_t val)
 
 int digitalRead(uint8_t pin)
 {
+#if defined(__AVR_ATtiny10__)
+	if (pin < 2) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
+#endif
+
 	if (pin == 0) cbi(TCCR0A, COM0A1); //turnOffPWM(TIMER0A);
 	if (pin == 1) cbi(TCCR0B, COM0A1); //turnOffPWM(TIMER0B);
 
-	if (PINB & 1<<pin) return HIGH;
+	if (PINB & (1<<pin)) return HIGH;
 	return LOW;
 }
