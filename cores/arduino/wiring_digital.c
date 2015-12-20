@@ -33,7 +33,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 {
 	if (pin > 3) return;
 
-	if (pin < 2) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
+	if (pin < 4) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
 
 	if (mode == INPUT) { 
 		uint8_t oldSREG = SREG;
@@ -104,7 +104,7 @@ void digitalWrite(uint8_t pin, uint8_t val)
 int digitalRead(uint8_t pin)
 {
 #if defined(__AVR_ATtiny10__)
-	if (pin < 2) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
+	if (pin < 4) DIDR0 &= ~(1 << pin);	// Digital Input Disable Register 0
 #endif
 
 	if (pin == 0) cbi(TCCR0A, COM0A1); //turnOffPWM(TIMER0A);
