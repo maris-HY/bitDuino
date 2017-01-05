@@ -1,0 +1,43 @@
+##################################################################
+menu.clock=Clock
+
+bitDuino13-9.name=ATtiny13 (bitDuino13)
+
+bitDuino13-9.upload.tool=avrdude
+#bitDuino13-9.upload.protocol=arduino
+bitDuino13-9.upload.maximum_size=1024
+bitDuino13-9.upload.maximum_data_size=64
+#bitDuino13-9.upload.speed=115200
+
+bitDuino13-9.bootloader.tool=avrdude
+bitDuino13-9.bootloader.unlock_bits=
+bitDuino13-9.bootloader.lock_bits=
+bitDuino13-9.bootloader.file=dummy.hex
+
+bitDuino13-9.build.mcu=attiny13
+bitDuino13-9.build.f_cpu=9600000L
+bitDuino13-9.build.board=AVR_bitDuino13-9
+bitDuino13-9.build.core=arduino
+bitDuino13-9.build.variant=bitDuino13
+
+#        internal 9.6MHz
+##----------------------------------------------------------------
+bitDuino13-9.menu.clock.internal-96=9.6MHz(Internal)
+bitDuino13-9.menu.clock.internal-96.bootloader.low_fuses=0x3a
+bitDuino13-9.menu.clock.internal-96.bootloader.high_fuses=0xff
+bitDuino13-9.menu.clock.internal-96.build.f_cpu=9600000L
+
+##        internal 4.8MHz
+##----------------------------------------------------------------
+bitDuino13-9.menu.clock.internal-48=4.8MHz(Internal)
+bitDuino13-9.menu.clock.internal-48.bootloader.low_fuses=0x39
+bitDuino13-9.menu.clock.internal-48.bootloader.high_fuses=0xff
+bitDuino13-9.menu.clock.internal-48.build.f_cpu=4800000L
+
+
+##        internal 1.2MHz
+##----------------------------------------------------------------
+bitDuino13-9.menu.clock.internal-12=1.2MHz(Internal)
+bitDuino13-9.menu.clock.internal-12.bootloader.low_fuses=0x2a
+bitDuino13-9.menu.clock.internal-12.bootloader.high_fuses=0xff
+bitDuino13-9.menu.clock.internal-12.build.f_cpu=1200000L

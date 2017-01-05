@@ -1,0 +1,22 @@
+##############################################################
+
+bitDuino10-8.name=ATtiny10 (bitDuino10 8MHz)
+
+bitDuino10-8.upload.tool=arduino:avrdude
+bitDuino10-8.upload.maximum_size=1024
+bitDuino10-8.upload.maximum_data_size=64
+
+bitDuino10-8.bootloader.tool=arduino:avrdude
+bitDuino10-8.bootloader.fuses=
+
+bitDuino10-8.bootloader.unlock_bits=
+bitDuino10-8.bootloader.lock_bits=
+bitDuino10-8.bootloader.file=dummy.hex
+
+bitDuino10-8.build.mcu=attiny10
+bitDuino10-8.build.f_cpu=8000000L
+bitDuino10-8.build.board=AVR_bitDuino10-8
+bitDuino10-8.build.core=arduino
+bitDuino10-8.build.variant=bitDuino10
+
+

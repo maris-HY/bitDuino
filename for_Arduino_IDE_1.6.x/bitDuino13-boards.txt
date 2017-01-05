@@ -1,0 +1,24 @@
+##################################################################
+
+bitDuino13-9.name=ATtiny13 (bitDuino13 9.6MHz)
+
+bitDuino13-9.upload.tool=avrdude
+#bitDuino13-9.upload.protocol=arduino
+bitDuino13-9.upload.maximum_size=1024
+bitDuino13-9.upload.maximum_data_size=64
+#bitDuino13-9.upload.speed=115200
+
+bitDuino13-9.bootloader.tool=avrdude
+bitDuino13-9.bootloader.low_fuses=0x3a
+bitDuino13-9.bootloader.high_fuses=0xff
+bitDuino13-9.bootloader.unlock_bits=
+bitDuino13-9.bootloader.lock_bits=
+bitDuino13-9.bootloader.file=dummy.hex
+
+bitDuino13-9.build.mcu=attiny13
+bitDuino13-9.build.f_cpu=9600000L
+bitDuino13-9.build.board=AVR_bitDuino13-9
+bitDuino13-9.build.core=arduino
+bitDuino13-9.build.core=arduino
+bitDuino13-9.build.variant=bitDuino13
+
